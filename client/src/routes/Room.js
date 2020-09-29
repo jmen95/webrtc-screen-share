@@ -16,12 +16,12 @@ const Room = (props) => {
 
 	useEffect(() => {
 		navigator.mediaDevices
-			.getUserMedia({ audio: false, video: true })
+			.getUserMedia({ audio: true, video: true })
 			.then((stream) => {
 				createSteam(stream);
 			})
 			.catch((error) => {
-				navigator.mediaDevices.getUserMedia({ audio: false, video: false }).then((stream) => {
+				navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then((stream) => {
 					createSteam(stream);
 				});
 			});
